@@ -8,6 +8,7 @@ saludar= function(){
     let mensajeBienvenida='Bienvenido '+nombre+' '+apellido;
     mostrarTexto('lblResultado', mensajeBienvenida );
     mostrarImagen('imgSaludo', './imagenes/saludos.gif')
+    mostrarTextoEnCaja('txtNombre', '')
 }
 recuperarTexto= function(idComponente){
     let componente;
@@ -35,4 +36,9 @@ mostrarImagen= function(idComponente,rutaImagen){
     let componente;
     componente= document.getElementById(idComponente);
     componente.src= rutaImagen;
+}
+mostrarTextoEnCaja= function(idComponente, mensaje){
+    let componente;
+    componente= document.getElementById(idComponente);
+    componente.value= mensaje;
 }
