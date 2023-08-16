@@ -6,24 +6,25 @@ calcularValorTotal = function(){
     let porcentajeDescuento= recuperarInt('txtPorcentajeDescuento');
     //variables para almacenar los retornos de las funciones
     let valorSubtotal= calcularSubtotal(precioProducto, cantidad);
-    let valorDescuento;
+    let valorDescuento= calcularValorDescuento(valorSubtotal, porcentajeDescuento);
     let valorIVA;
     let valorTotal;
     mostrarTexto('lblSubtotal', valorSubtotal);
+    mostrarTexto('lblDescuento',valorDescuento)
     //1.- Recuperar el nombre del producto como String
     //2.- Recuperar el precio como float
     //3.- Recuperar cantidad como int
     //4.- Recuperar el porcentaje de descuento como int
     //4.- Invocar a calcularSubtotal y el retorno guardar en la variable valorSubtotal
-    //5. Mostrar valorSubtotal en el componente lblSubtotal
+    //5.- Mostrar valorSubtotal en el componente lblSubtotal
         /*
             Caso de prueba: 
                 precioProducto: 5.4  cantidad: 10
                 Subtotal esperado: 54
             Si el caso de prueba es exitoso, hacer un commit
          */
-    //6. Invocar a calcularDescuento y lo que devuelve guardar en la variable valorDescuento
-    //7. Mostrar el resultado en el componente lblDescuento
+    //6.- Invocar a calcularDescuento y lo que devuelve guardar en la variable valorDescuento
+    //7.- Mostrar el resultado en el componente lblDescuento
         /*
             Caso de prueba: 
                 precioProducto: 5.4  cantidad: 10 descuento: 10
