@@ -5,7 +5,7 @@ calcularValorDescuento= function(monto, porcentajeDescuento){
 }
 calcularIva=function(monto){
     let iva;
-    iva= ((monto * 12)/100).toFixed(3);
+    iva= ((monto * 12)/100);
     return iva;
 }
 calcularSubtotal= function(precio, cantidad){
@@ -15,6 +15,6 @@ calcularSubtotal= function(precio, cantidad){
 }
 calcularTotal= function(subtotal, descuento, iva){
     let totalPagarUsuario;
-    totalPagarUsuario= subtotal - descuento + iva;
+    totalPagarUsuario= ((subtotal - descuento) + iva);
     return totalPagarUsuario;
 }
