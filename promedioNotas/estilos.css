@@ -1,0 +1,59 @@
+body{
+    background-color: beige;
+    background-size: cover;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.titulo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 100px;
+    font-size: 40px;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   color: #07850b;
+}
+.principal{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-left: 0px;
+    margin-right:0px;
+    margin-top: 50px;
+}
+.ingresoNotas{
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.tituloCampo{
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    margin-right: 20px;
+}
+.contenedorBoton{
+    display: flex;
+    flex:1;
+    justify-content: center;
+}
+.estiloBoton:hover {
+    background-color:white; 
+    color: #4CAF50;
+    border:1px;
+    border-color: #4CAF50;
+    border-radius: 5px;
+}
+.estiloBoton:active{
+    background-color: #4CAF50; 
+    border: none;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 5px;
+}

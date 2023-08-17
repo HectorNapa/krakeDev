@@ -3,19 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
     <script src="serviciosPromedioNotas.js"></script>
     <script src="promedioNotas.js"></script>
     <script src="utilitarios.js"></script>
     <title>promedioNotas</title>
 </head>
 <body>
-      <h3>Ingresar Primera nota:</h3>
-      <input type="text" id="txtPriNota"/>
-      <h3>Ingresar Segunda nota:</h3>
-      <input type="text" id="txtSegNota"/>
-      <h3>Ingresar Tercera nota:</h3>
-      <input type="text" id="txtTercNota"/>
-      <h3 id="lblPromedio">Su promedio es:</h3>
-      <input type="button" value="CALCULAR PROMEDIO" onclick="calcularPromedioNotas();"/>
+    <div>
+        <div class="titulo">
+            CALCULAR PROMEDIO
+        </div>
+        <div class="principal">
+                <div>
+                    <div class="ingresoNotas">
+                        <div class="tituloCampo">
+                            INGRESE PRIMER NOTA:
+                        </div>
+                        <div>
+                            <input type="text" id="txtPriNota"/>
+                        </div>
+                    </div>
+                    <div class="ingresoNotas">
+                        <div class="tituloCampo">
+                            INGRESE SEGUNDA NOTA:
+                        </div>
+                        <div>
+                            <input type="text" id="txtSegNota"/>
+                        </div>
+                    </div>
+                    <div class="ingresoNotas">
+                        <div class="tituloCampo">
+                            INGRESE TERCERA NOTA:
+                        </div>
+                        <div>
+                            <input type="text" id="txtTercNota"/>
+                        </div>
+                    </div>
+                    
+                    <div class="contenedorBoton">
+                        <input class="estiloBoton" type="button" value="CALCULAR PROMEDIO" onclick="calcularPromedioNotas();"/>
+                    </div>
+                </div>
+                <div>
+                    <div class="tituloCampo">
+                        <h3 id="lblPromedio">Su promedio es:</h3>
+                    </div>
+                    <img width="300px" id="imgImagen" src=" "/>
+                </div>
+            
+        </div>
+    </div>
 </body>
 </html>
