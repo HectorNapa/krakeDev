@@ -1,5 +1,5 @@
 jugar= function(){
-    let aleatorio
+    let aleatorio;
     aleatorio= lanzarDado();
     cambiarTexto('lblNumero', aleatorio);
     if(aleatorio > 3){
