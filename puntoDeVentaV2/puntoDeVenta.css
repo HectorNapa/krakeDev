@@ -1,0 +1,97 @@
+body{
+    background-color: black;
+    margin-top: 100px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.contenedorPrincipal{
+    background-color: rgb(203, 205, 207);
+    display: flex;
+    flex-direction: row;
+}
+.contenedorImg{
+    flex: 1;
+    padding: 15px;  
+}
+.contenedorIngresos{
+    flex: 1;   
+}
+.titulo{
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.ingresos{
+    display: flex;
+    flex-direction: row;
+    padding-left: 40px;
+    padding-right: 30px;
+    padding-top: 10px;
+}
+.tituloIngreso{
+    padding-right: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    flex: 1;
+}
+.contenedorBoton{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 50px;
+}
+.inputBoton{
+    display: flex;
+    flex:1;
+    justify-content: center;
+}
+.estiloBoton{
+    background-color: #4CAF50; 
+    border: none;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 35px;
+    padding-right: 35px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 5px;
+}
+.estiloBoton:hover {
+    background-color:white; 
+    color: #4CAF50;
+    border:1px;
+    border-color: #4CAF50;
+    border-radius: 5px;
+}
+.estiloBoton:active{
+    background-color: #4CAF50; 
+    border: none;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 5px;
+}
+.contenedorResultado{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.resultado{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px;
+}
+.tituloResultado{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-right: 10px;
+}
+.error{
+    color:red;
+    font-style: italic;
+    font-size: 16px;
+}
