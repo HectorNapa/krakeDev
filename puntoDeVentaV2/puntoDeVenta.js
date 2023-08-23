@@ -2,6 +2,7 @@ calcularValorTotal = function(){
     let nombreProducto = recuperarTexto('txtProducto');
     let cantidad= recuperarInt('txtCantidad');
     let precioProducto= recuperarFloat('txtPrecio');
+    //validaciones de cada una de la funciones por true
     if(esProductoValido(nombreProducto,'errorProducto')& esCantidadValida(cantidad,'errorCantidad')& esPrecioValido(precioProducto,'errorPrecio')){
         let valorSubtotal= calcularSubtotal(precioProducto, cantidad);
         let valorDescuento= calcularDescunetoPorVolumen(valorSubtotal, cantidad);
@@ -15,7 +16,6 @@ calcularValorTotal = function(){
         let detalle ='Valor a pagar por '+ cantidad +' '+ nombreProducto +' es de: '+ valorTotal+' USD';
         mostrarTexto('lblResumen',detalle); 
     }
-    
 }   
 limpiar=function(){
     //Caja de texto
@@ -28,19 +28,6 @@ limpiar=function(){
         mostrarTexto('lblValorIVA', '0.0');
         mostrarTexto('lblTotal', '0.0');
         mostrarTexto('lblResumen','0.0');  
-}
-calcularDescunetoPorVolumen=function(subtotal, cantidad){
-    let descuento;
-    if(cantidad < 3){
-        descuento= (subtotal*0)/100;
-    }else if(cantidad >=3 && cantidad <=5){
-        descuento= (subtotal*3)/100;
-    }else if(cantidad >= 6 && cantidad <=11){
-        descuento= (subtotal*4)/100;
-    }else{
-        descuento= (subtotal*5)/100;
-    }
-    return descuento;
 }
 //VALIDACIONES:
 esProductoValido= function(producto, idComponente){
