@@ -139,3 +139,20 @@ obtenerTipoVehiculo= function(placa){
     }
     return tipoVehiculo;
 }
+obtenerDiaPicoYPlaca=function(placa){
+    let longitudPlaca= placa.length-1;
+    let ultimoDigito= placa.charAt(longitudPlaca);
+    let diaPicoPlaca;
+    if(ultimoDigito =='1' || ultimoDigito == '2'){
+        diaPicoPlaca= 'LUNES';
+    }else if(ultimoDigito == '3' || ultimoDigito == '4'){
+        diaPicoPlaca= 'MARTES';
+    }else if(ultimoDigito == '5' || ultimoDigito == '6'){
+        diaPicoPlaca= 'MIERCOLES';
+    }else if( ultimoDigito == '7'|| ultimoDigito == '8'){
+        diaPicoPlaca= 'JUEVES';
+    }else if( ultimoDigito == '9'|| ultimoDigito == '0'){
+        diaPicoPlaca= 'VIERNES';
+    }
+    return diaPicoPlaca;
+}
