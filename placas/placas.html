@@ -13,14 +13,20 @@
 <body>
      <div class="contePrincipal">
         <div class="Img">
-            <img src="./Imagen/ANT.jpeg" width="70%"/>
+            <img src="./Imagen/ANT.jpeg" width="90%"/>
         </div>
         <div class="ingresoPlaca">
             <label class="ingreso">Ingrese la placa:</label>
             <input type="text" id="txtNumPlaca"/>
-            <div class="inputBoton">
-                <input  type="button" value="VALIDAR" class="estiloBoton" onclick="validarPlaca();"/>
+            <div class="contentBoton">
+                <div class="inputBoton">
+                    <input  type="button" value="VALIDAR" class="estiloBoton" onclick="validarPlaca();"/>
+                </div>
+                <div class="inputBoton">
+                    <input  type="button" value="LIMPIAR" class="estiloBoton" onclick="limpiar();"/>
+                </div>
             </div>
+            
         </div>
         <div class="resultado">
             <div class="mensajeResultado">

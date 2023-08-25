@@ -34,3 +34,10 @@ validarPlaca= function(){
         mostrarTexto('lblMensaje',erroresEstructura);
     }
 }
+limpiar= function(){
+    mostrarTextoEnCaja('txtNumPlaca','');
+    mostrarTexto('lblResultado','');
+    mostrarTexto('lblMensaje','');
+    mostrarTexto('lblTipoVehiculo','');
+    mostrarTexto('lblDiaPicoPlaca','');
+}
