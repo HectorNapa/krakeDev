@@ -1,4 +1,3 @@
-
 validarEstructura = function (placa) {
     let longitudPlaca = placa.length;
     let mayuscula1;
@@ -68,7 +67,6 @@ validarEstructura = function (placa) {
     }
     return resultado;
 }
-
 obtenerProvincia= function(placa){
     let provincia;
     let primerLetra= placa.charAt(0);
@@ -122,4 +120,22 @@ obtenerProvincia= function(placa){
         provincia= null;
     }
     return provincia;
+}
+obtenerTipoVehiculo= function(placa){
+    let tipoVehiculo;
+    let segundaLetra= placa.charAt(1);
+    if(segundaLetra == 'A' || segundaLetra =='Z'){
+        tipoVehiculo= 'Vehiculos comerciales (como taxis o autobuses)';
+    }else if(segundaLetra == 'E'){
+        tipoVehiculo= 'Vehiculos gubernamentales';
+    }else if(segundaLetra == 'X'){
+        tipoVehiculo= 'Vehiculos de uso oficial';
+    }else if(segundaLetra == 'S'){
+        tipoVehiculo= 'Vehiculos del gobierno provincial';
+    }else if(segundaLetra == 'M'){
+        tipoVehiculo= 'Vehiculos municipales';
+    }else{
+        tipoVehiculo= null;
+    }
+    return tipoVehiculo;
 }
