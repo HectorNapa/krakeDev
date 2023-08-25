@@ -26,8 +26,8 @@ jugar= function(seleccionado){
    }
 }
 limpiar= function(){
-    mostrarTexto('puntoUsuario','');
-    mostrarTexto('puntoComputa', '');
+    mostrarTexto('puntoUsuario','0');
+    mostrarTexto('puntoComputa', '0');
     mostrarTexto('mensajeGanar','');
     mostrarTexto('mensajeGanar','');
     mostrarTexto('resultadoFinal','');

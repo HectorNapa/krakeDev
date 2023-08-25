@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="juego.css">
     <script src="juego.css"></script>
     <script src="juego.js"></script>
     <script src="serviciosJuego.js"></script>
@@ -10,28 +11,39 @@
     <title>JuegoPiedraPapelTijera</title>
 </head>
 <body>
-    <div>
-        <div>
+    <div class="contenedor">
+        <div class="titulo">
            JUEGA PIEDRA PAPEL O TIJERA
         </div>
-        <div>
-            <div>Puntaje Usuario:</div>
-            <div id="puntoUsuario">0</div>
-            <div>Puntaje Computador:</div>
-            <div id="puntoComputa">0</div>
+        <div class="puntaje">
+            <div class="contenedorTxT">
+                <div class="puntajeTxT">Puntaje Usuario:</div>
+                <div id="puntoUsuario" class="puntajeNum">0</div>
+            </div>
+            <div class="contenedorTxT">
+                <div class="puntajeTxT">Puntaje Computador:</div>
+                <div id="puntoComputa" class="puntajeNum">0</div>
+            </div>
         </div>
-        <div>
-            <img src="./imagenes/piedra.png" width="10%" onclick="jugar('PIEDRA');"/>
-            <img src="./imagenes/papel.png " width="9%" onclick="jugar('PAPEL');"/>
-            <img src="./imagenes/tijera.png " width="9%" onclick="jugar('TIJERA');"/>
+        <div class="contenedorImg">
+            <div class="imgUsuario">
+                <img src="./imagenes/piedra.png" width="20%" onclick="jugar('PIEDRA');"/>
+                <img src="./imagenes/papel.png " width="20%" onclick="jugar('PAPEL');"/>
+                <img src="./imagenes/tijera.png " width="20%" onclick="jugar('TIJERA');"/>
+            </div>
+            <div class="imgCompu">
+                <img id="imgPiePapTije" width="20%"/>
+            </div>
         </div>
-        <div>
-            <img id="imgPiePapTije" width="10%"/>
+        <div class="contenedorMensj">
+            <div id="mensajeGanar" ></div>
         </div>
-        <div id="mensajeGanar"></div>
-        <div id="resultadoFinal"></div>
-        <div>
-            <input type="button" value="NUEVA PARTIDA" onclick="limpiar();"/>
+        <div class="contenedorResuFinal">
+            <div id="resultadoFinal"></div>
+        </div>
+        
+        <div class="inputBoton">
+            <input type="button" value="NUEVA PARTIDA" class="estiloBoton" onclick="limpiar();"/>
         </div>
     </div>
 </body>
