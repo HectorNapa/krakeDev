@@ -66,6 +66,60 @@ validarEstructura = function (placa) {
     if (validarNum7 == false) {
         resultado = resultado + ' El septimo caracter dede ser un digito, '
     }
-
     return resultado;
+}
+
+obtenerProvincia= function(placa){
+    let provincia;
+    let primerLetra= placa.charAt(0);
+    if(primerLetra =='A'){
+        provincia= 'AZUAY';
+    }else if(primerLetra == 'B'){
+        provincia= 'BOLIVAR';
+    }else if(primerLetra == 'U'){
+        provincia= 'CAÑAR';
+    }else if(primerLetra == 'C'){
+        provincia= 'CARCHI';
+    }else if(primerLetra == 'X'){
+        provincia= 'COTOPAXI';
+    }else if(primerLetra == 'H'){
+        provincia= 'CHIMBORAZO';
+    }else if(primerLetra == 'O'){
+        provincia= 'EL ORO';
+    }else if(primerLetra == 'E'){
+        provincia= 'ESMERALDAS';
+    }else if(primerLetra == 'W'){
+        provincia= 'GALAPAGOS';
+    }else if(primerLetra == 'G'){
+        provincia= 'GUAYAS';
+    }else if(primerLetra == 'I'){
+        provincia= 'IMBABURA';
+    }else if(primerLetra == 'L'){
+        provincia= 'LOJA';
+    }else if(primerLetra == 'R'){
+        provincia= 'LOS RIOS';
+    }else if(primerLetra == 'M'){
+        provincia= 'MANABI';
+    }else if(primerLetra == 'V'){
+        provincia= 'MORONA SANTIAGO';
+    }else if(primerLetra == 'N'){
+        provincia= 'NAPO';
+    }else if(primerLetra == 'S'){
+        provincia= 'PASTAZA';
+    }else if(primerLetra == 'P'){
+        provincia= 'PICHINCHA';
+    }else if(primerLetra == 'K'){
+        provincia= 'SUCUMBIOS';
+    }else if(primerLetra == 'Q'){
+        provincia= 'ORELLANA';
+    }else if(primerLetra == 'T'){
+        provincia= 'TUNGURAHUA';
+    }else if(primerLetra == 'Z'){
+        provincia= 'ZAMORA CHINCHIPE';
+    }else if(primerLetra == 'Y'){
+        provincia= 'SANTA ELENA';
+    }else{
+        provincia= null;
+    }
+    return provincia;
 }
