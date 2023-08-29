@@ -24,6 +24,7 @@ recorrerCadena= function(cadena){  //recorrer cadena por medio de un un for.
     }
     
 }
+//recorrer cadena y mostrarla invertidad
 invertirCadena= function(cadena){
     let invertido='';
     for(let posicion= cadena.length-1; posicion >= 0; posicion--){
@@ -32,3 +33,31 @@ invertirCadena= function(cadena){
     }
     return invertido;
 }
+// buscar una letra en una linea de caracteres por medio del recorrido del for
+ buscarLetra= function(cadena, letra){
+    let letraIterada;
+    let existeLetra= false;
+    for(let i = 0; i<cadena.length; i++){
+        letraIterada= cadena.charAt(i);
+        if(letraIterada == letra){
+            existeLetra= true;
+        }
+        if(existeLetra== true){
+            return true;
+        }else{
+            return false;
+        }
+    } 
+ }
+ // buscar una letra mayuscula en una linea de caractares por medio de la estructura For
+ contarMayusculas= function(cadena){
+    let letra;
+    let contadorMayusculas=0;
+    for(let i=0; i< cadena.length; i++){
+        letra= cadena.charAt(i);
+        if(esMayuscula(letra)){
+            contadorMayusculas++;
+        }
+        console.log(contadorMayusculas);
+    }
+ }
