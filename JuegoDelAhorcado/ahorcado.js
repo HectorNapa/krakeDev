@@ -31,3 +31,16 @@ esMayuscula= function(caracter){
     }
     return valida;
 }
+mostrarLetra= function(letra, posicion){
+    if(posicion == 0){
+        mostrarTexto('div0',letra);
+    }else if(posicion == 1){
+        mostrarTexto('div1',letra);
+    }else if(posicion == 2){
+        mostrarTexto('div2',letra);
+    }else if(posicion == 3){
+        mostrarTexto('div3',letra);
+    }else if(posicion == 4){
+        mostrarTexto('div4',letra);
+    }
+}
