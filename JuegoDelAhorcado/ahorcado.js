@@ -55,3 +55,12 @@ validar= function(letra){
             }
       }
 }
+ingresarLetra= function(){
+    let letra= recuperarTexto('txtLetra');
+    let letraMayu= esMayuscula(letra);
+    if( letraMayu == true){
+        validar(letra);
+    }else{
+        alert('SOLO SE ACEPTAN MAYUSCULAS');
+    }
+}
