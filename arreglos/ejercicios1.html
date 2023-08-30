@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="ejercicios1.js"></script>
+    <script src="utilitarios.js"></script>
+    <title>Arreglos</title>
+</head>
+<body>
+    <input type="text" id="txtNotas" />
+    <input type="button" value="GREGAR NOTA" onclick="probarAgregar();"/>
+    <input type="button" value="IMPRIMIR" onclick="recorrerArreglo();"/>
+    <input type="button" value="PRUEBA1" onclick="agregarElementos();"/>
+    <table>
+        <tr>
+            <th>CABECERA 1</th>
+            <th>CABECERA 2</th>
+            <th>CABECERA 3</th>
+        </tr>
+        <tr>
+            <td>celda 1 </td>
+            <td>celda 2 </td>
+            <td>celda 3 </td>
+        </tr>
+        <tr>
+            <td>celda 4 </td>
+            <td>celda 5 </td>
+            <td>celda 6 </td>
+        </tr>
+        <tr>
+            <td>celda 7 </td>
+            <td>celda 8 </td>
+            <td>celda 9 </td>
+        </tr>
+    </table>
+    <div>
+        <input type="button" value="GENERAR TABLA" onclick="generarTabla();"/>
+        <div id="divTabla">
+        </div>
+    </div>
+    
+    <div>
+        <input type="button" value="CALCULAR PROMEDIO" onclick="ejecutarPromedio();"/>
+        <h3 id="h3Texto"></h3>
+    </div>
+    
+</body>
+</html>
