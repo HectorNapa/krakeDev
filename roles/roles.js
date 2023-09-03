@@ -7,6 +7,7 @@ mostrarOpcionEmpleado= function(){
     ocultarComponente('divRol');
     ocultarComponente('divResumen');
     mostrarComponente('divEmpleado');
+    mostrarEmpleados();
 }
 //Mostrar divRol  y ocultar  y divEmpleado divResumen
 mostrarOpcionRol= function(){
@@ -20,4 +21,24 @@ mostrarOpcionResumen= function(){
     ocultarComponente('divRol');
     mostrarComponente('divResumen');
 }
-
+//Creación de la tabla de forma dinamica
+mostrarEmpleados= function(){
+    let cmpTablaEmpleado= document.getElementById('tablaEmpleados');
+    let contenidoTabla='<table><tr>'+
+    '<th>CEDULA</th>'+
+    '<th>NOMBRE</th>'+
+    '<th>APELLIDO</th>'+
+    '<th>SUELDO</th>'+
+    '</tr>';
+    let empleado;
+    for(let i=0; i< empleados.length; i++){
+        empleado= empleados[i];
+        contenidoTabla+='<tr><td>'+empleado.cedula+
+        '</td><td>'+empleado.nombre+
+        '</td><td>'+empleado.apellido+
+        '</td><td>'+empleado.sueldo+
+        '</td><tr>'
+    }
+    contenidoTabla+= '</table>';
+    cmpTablaEmpleado.innerHTML= contenidoTabla;
+}
