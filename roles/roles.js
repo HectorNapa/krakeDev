@@ -11,12 +11,7 @@ mostrarOpcionEmpleado= function(){
     ocultarComponente('divResumen');
     mostrarComponente('divEmpleado');
     mostrarEmpleados();
-    //Deshabilitar componentes
-    deshabilitarComponente('txtCedula');
-    deshabilitarComponente('txtNombre');
-    deshabilitarComponente('txtApellido');
-    deshabilitarComponente('txtSueldo');
-    deshabilitarComponente('btnGuardar');
+    bloqueoDeComponentes();
 }
 //Mostrar divRol  y ocultar  y divEmpleado divResumen
 mostrarOpcionRol= function(){
@@ -58,7 +53,7 @@ ejecutarNuevo= function(){
     habilitarComponente('txtApellido');
     habilitarComponente('txtSueldo');
     habilitarComponente('btnGuardar');
-    esNuevo=true;
+        esNuevo=true;
 }
 buscarEmpleado= function(cedula){
 let empleadoEncontrado=null;
@@ -98,13 +93,13 @@ guardar= function(){
             if(validaDigito>=48 && validaDigito<=57){
                 validaCedula=true;
             }else{
-                mostrarTexto('lblErrorCedula','Deve ingresar todos digitos');
+                mostrarTexto('lblErrorCedula','Debe ingresar todos digitos');
             }
         }  
     }else if(cedula==""){
         mostrarTexto('lblErrorCedula','Campo obligatorio*');
     }else{
-        mostrarTexto('lblErrorCedula','Deve ingresar 10 digitos');
+        mostrarTexto('lblErrorCedula','Debe ingresar 10 digitos');
     }
     //Valida nombre y apellido
     validaNombre=validarPalabra(nombre,'lblErrorNombre');
@@ -131,11 +126,19 @@ guardar= function(){
         if(empleadoAgregado == true){
             alert('EMPLEADO GUARDADO CORRECTAMENTE');
             mostrarEmpleados();
+            bloqueoDeComponentes();
         }else{
             alert('YA EXITE UN EMPLEADO CON LA CEDULA '+cedula);
         }
     }
   }
+}
+bloqueoDeComponentes= function(){
+    deshabilitarComponente('txtCedula');
+    deshabilitarComponente('txtNombre');
+    deshabilitarComponente('txtApellido');
+    deshabilitarComponente('txtSueldo');
+    deshabilitarComponente('btnGuardar');
 }
 //Valida nombre y apellido ingresados
 validarPalabra= function(palabra, idComponente){
@@ -147,14 +150,14 @@ validarPalabra= function(palabra, idComponente){
             if(validaLetra >=65 && validaLetra <=90){
                 validar= true;
             }else{
-                mostrarTexto(idComponente,'Deve ingresar todas mayusculas');
+                mostrarTexto(idComponente,'Debe ingresar todas mayusculas');
             }
         }
     }else if(palabra==""){
         mostrarTexto(idComponente,'Campo obligatorio*');
         
     }else{
-        mostrarTexto(idComponente,'Deve ingresar al menos 3 caracteres');
+        mostrarTexto(idComponente,'Debe ingresar al menos 3 caracteres');
     }
     return validar; 
 }
