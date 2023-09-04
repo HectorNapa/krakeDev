@@ -58,14 +58,103 @@ ejecutarNuevo= function(){
     habilitarComponente('txtApellido');
     habilitarComponente('txtSueldo');
     habilitarComponente('btnGuardar');
-    let cedula= recuperarTexto('txtCedula');
-    let empleado;
+    esNuevo=true;
+}
+buscarEmpleado= function(cedula){
+let empleadoEncontrado=null;
+let empleado;
     for(let i=0; i<empleados.length; i++){
         empleado= empleados[i];
         if(empleado.cedula == cedula){
-            esNuevo= false;
+            empleadoEncontrado= empleado;
             break;
         }
     }
-    esNuevo= true;
+return empleadoEncontrado;
+}
+agregarEmpleado=function(empleado){
+    let agregaEmpleado=false;
+    let empleadoEncontrado= buscarEmpleado(empleado.cedula);
+    if(empleadoEncontrado == null){
+        empleados.push(empleado);
+        agregaEmpleado= true;
+    }
+    return agregaEmpleado;
+}
+guardar= function(){
+    let cedula=recuperarTexto('txtCedula');
+    let nombre=recuperarTexto('txtNombre');
+    let apellido=recuperarTexto('txtApellido');
+    let sueldo=recuperarTexto('txtSueldo');
+    let validaCedula= false;
+    let validaNombre= false;
+    let validaApellido=false;
+    let validaSueldo=false;
+    //Valida numero de cedula
+    if(cedula.length == 10){
+        let validaDigito;
+        for(let i=0; i<cedula.length; i++){
+            validaDigito= cedula.charCodeAt(i);
+            if(validaDigito>=48 && validaDigito<=57){
+                validaCedula=true;
+            }else{
+                mostrarTexto('lblErrorCedula','Deve ingresar todos digitos');
+            }
+        }  
+    }else if(cedula==""){
+        mostrarTexto('lblErrorCedula','Campo obligatorio*');
+    }else{
+        mostrarTexto('lblErrorCedula','Deve ingresar 10 digitos');
+    }
+    //Valida nombre y apellido
+    validaNombre=validarPalabra(nombre,'lblErrorNombre');
+    validaApellido=validarPalabra(apellido,'lblErrorApellido');
+    //Valida sueldo
+    if(sueldo !=""){
+        let floatSueldo= parseFloat(sueldo);
+        if(floatSueldo >=400 && floatSueldo<=5000){
+            validaSueldo= true;
+        }else{
+            mostrarTexto('lblErrorSueldo','Ingrese monto entre 400 a 5000');
+        }
+    }else{
+        mostrarTexto('lblErrorSueldo','Campo obligatorio*');
+    }
+  if(validaCedula==true && validaNombre==true && validaApellido==true && validaSueldo==true){
+    if(esNuevo==true){
+        let empleado={};
+        empleado.cedula=cedula;
+        empleado.nombre= nombre;
+        empleado.apellido= apellido;
+        empleado.sueldo= sueldo;
+        let empleadoAgregado= agregarEmpleado(empleado);
+        if(empleadoAgregado == true){
+            alert('EMPLEADO GUARDADO CORRECTAMENTE');
+            mostrarEmpleados();
+        }else{
+            alert('YA EXITE UN EMPLEADO CON LA CEDULA '+cedula);
+        }
+    }
+  }
+}
+//Valida nombre y apellido ingresados
+validarPalabra= function(palabra, idComponente){
+    let validar= false;
+    if(palabra.length >= 3){
+        let validaLetra;
+        for(let i=0; i<palabra.length; i++){
+            validaLetra= palabra.charCodeAt(i);
+            if(validaLetra >=65 && validaLetra <=90){
+                validar= true;
+            }else{
+                mostrarTexto(idComponente,'Deve ingresar todas mayusculas');
+            }
+        }
+    }else if(palabra==""){
+        mostrarTexto(idComponente,'Campo obligatorio*');
+        
+    }else{
+        mostrarTexto(idComponente,'Deve ingresar al menos 3 caracteres');
+    }
+    return validar; 
 }

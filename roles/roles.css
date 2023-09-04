@@ -1,5 +1,5 @@
 body{
-      background-size: cover;
+    background-size: cover;
     margin-left: 0px;
     margin-right: 0px;
 }
@@ -87,9 +87,9 @@ tbody tr:nth-child(odd) {
     background-color: white;
   }
   
-  tbody tr {
+  /*tbody tr {
     background-image: url(noise.png);
-  }
+  }*/
   
   table,th,td {
     border: 1px solid black;
