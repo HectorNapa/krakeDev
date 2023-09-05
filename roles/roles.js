@@ -216,18 +216,19 @@ calcularRol= function(){
     let aporteEmpleado; 
     let valorPagar;  
     let sueldo= recuperarFloatDiv('infoSueldo');
-    let descuento= recuperarFloat('txtDescuentos');
+    let descuento= recuperarTexto('txtDescuentos');
     if(descuento !=""){
-        if(descuento >=0 && descuento <= sueldo){
-            validaSueldo= true;
+        let valorFloat= parseFloat(descuento);
+        if(valorFloat >=0 && valorFloat <= sueldo){
+            aporteEmpleado= calcularAporteEmpleado(sueldo);
+            mostrarTexto('infoIESS',aporteEmpleado);
+            valorPagar= calcularValorAPagar(sueldo, aporteEmpleado, descuento);
+            mostrarTexto('infoPago',valorPagar);
         }else{
-            mostrarTexto('lblErrorDescuentos','Ingrese monto de descuemto');
+            mostrarTexto('lblErrorDescuentos','Ingresar descuento menor al sueldo');
         }
     }else{
         mostrarTexto('lblErrorDescuentos','Campo obligatorio*');
     }
-    aporteEmpleado= calcularAporteEmpleado(sueldo);
-    mostrarTexto('infoIESS',aporteEmpleado);
-    valorPagar= calcularValorAPagar(sueldo, aporteEmpleado, descuento);
-    mostrarTexto('infoPago',valorPagar);
+    
 }
