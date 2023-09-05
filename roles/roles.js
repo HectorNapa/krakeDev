@@ -204,3 +204,30 @@ buscarPorRol= function(){
     alert('EMPLEADO NO EXISTE');
    }
 }
+calcularAporteEmpleado= function(sueldo){
+     let aporteEmpleado= (sueldo*9.45)/100;
+     return aporteEmpleado;
+}
+calcularValorAPagar= function(sueldo,aporIESS,descuento){
+    let valorPagar= sueldo- aporIESS- descuento;
+    return valorPagar;
+}
+calcularRol= function(){
+    let aporteEmpleado; 
+    let valorPagar;  
+    let sueldo= recuperarFloatDiv('infoSueldo');
+    let descuento= recuperarFloat('txtDescuentos');
+    if(descuento !=""){
+        if(descuento >=0 && descuento <= sueldo){
+            validaSueldo= true;
+        }else{
+            mostrarTexto('lblErrorDescuentos','Ingrese monto de descuemto');
+        }
+    }else{
+        mostrarTexto('lblErrorDescuentos','Campo obligatorio*');
+    }
+    aporteEmpleado= calcularAporteEmpleado(sueldo);
+    mostrarTexto('infoIESS',aporteEmpleado);
+    valorPagar= calcularValorAPagar(sueldo, aporteEmpleado, descuento);
+    mostrarTexto('infoPago',valorPagar);
+}
