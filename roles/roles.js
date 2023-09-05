@@ -193,3 +193,14 @@ limpiar= function(){
     esNuevo= false;
     bloqueoDeComponentes();
 }
+buscarPorRol= function(){
+   let cedulaIngr= recuperarTexto('txtBusquedaCedulaRol');
+   let empleadoEncon= buscarEmpleado(cedulaIngr);
+   if(empleadoEncon!=null){
+        mostrarTexto("infoCedula",empleadoEncon.cedula);
+        mostrarTexto("infoSueldo",empleadoEncon.sueldo);
+        mostrarTexto("infoNombre",empleadoEncon.nombre+' '+empleadoEncon.apellido);
+   }else{
+    alert('EMPLEADO NO EXISTE');
+   }
+}
