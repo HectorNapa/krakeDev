@@ -20,6 +20,7 @@ mostrarOpcionRol= function(){
     ocultarComponente('divResumen');
     mostrarComponente('divRol');
     deshabilitarComponente('btnGuardarRol');
+    mostrarRoles();
 }
 //Mostrar divResumen y ocultar divRol y divEmpleado
 mostrarOpcionResumen= function(){
@@ -275,4 +276,43 @@ guardarRol= function(){
     rol.aporteEmpleado=aporteIESSr;
     rol.aporteEmpleador=aporteEmpleadorC;
     agregarRol(rol);
+}
+mostrarRoles= function(){
+    let tablaResumenRol= document.getElementById('tablaResumen');
+    let tabla='<table><tr>'+'<th>CEDULA</th>'+
+                '<th>NOMBRE</th>'+
+                '<th>SUELDO</th>'+
+                '<th>VALOR A PAGAR</th>'+
+                '<th>APORTE EMPLEADO</th>'+
+                '<th>APORTE EMPLEADOR</th>'+
+                '</tr>'
+    let rol;
+    for(let i=0; i< roles.length; i++){
+        rol= roles[i];
+        tabla+='<tr><td>'+rol.cedula+
+        '</td><td>'+rol.nombre+
+        '</td><td>'+rol.sueldo+
+        '</td><td>'+rol.valorAPagar+
+        '</td><td>'+rol.aporteEmpleado+
+        '</td><td>'+rol.aporteEmpleador+
+        '</td><tr>'
+    }
+    tabla+= '</table>';
+    tablaResumenRol.innerHTML= tabla;
+    mostrarTotales();
+}
+mostrarTotales= function(){
+    let totalAPagar=0;
+    let totalEmpleador=0;
+    let totalEmpleado=0;
+    let rol;
+    for(let i=0; i< roles.length;i++){
+        rol= roles[i];
+        totalAPagar+= parseFloat( rol.valorAPagar);
+        totalEmpleado+= parseFloat(rol.aporteEmpleado);
+        totalEmpleador+= parseFloat(rol.aporteEmpleador);
+    }
+    mostrarTexto('infoTotalPago',totalAPagar);
+    mostrarTexto('infoAporteEmpresa',totalEmpleador);
+    mostrarTexto('infoAporteEmpleado',totalEmpleado);
 }
