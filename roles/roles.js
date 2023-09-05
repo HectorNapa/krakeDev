@@ -305,6 +305,7 @@ mostrarTotales= function(){
     let totalAPagar=0;
     let totalEmpleador=0;
     let totalEmpleado=0;
+    let totalNomina;
     let rol;
     for(let i=0; i< roles.length;i++){
         rol= roles[i];
@@ -315,4 +316,6 @@ mostrarTotales= function(){
     mostrarTexto('infoTotalPago',totalAPagar);
     mostrarTexto('infoAporteEmpresa',totalEmpleador);
     mostrarTexto('infoAporteEmpleado',totalEmpleado);
+    totalNomina=  totalAPagar+ totalEmpleador+ totalEmpleado;
+    mostrarTexto('infoTotalNomina',totalNomina);
 }
