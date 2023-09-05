@@ -4,7 +4,8 @@ let empleados = [
     {cedula:"1714616123",nombre:"JOHN",apellido:"CENA",sueldo:500.0},
     {cedula:"0914632123",nombre:"LUISA",apellido:"GONZALEZ",sueldo:900.0},
     {cedula:"0823445361",nombre:"ALBERTO",apellido:"MENDOZA", sueldo:800.0}
-]
+];
+let roles=[];
 //Mostrar divEmpleado y ocultar divRol y divResumen
 mostrarOpcionEmpleado= function(){
     ocultarComponente('divRol');
@@ -18,6 +19,7 @@ mostrarOpcionRol= function(){
     ocultarComponente('divEmpleado');
     ocultarComponente('divResumen');
     mostrarComponente('divRol');
+    deshabilitarComponente('btnGuardarRol');
 }
 //Mostrar divResumen y ocultar divRol y divEmpleado
 mostrarOpcionResumen= function(){
@@ -224,11 +226,53 @@ calcularRol= function(){
             mostrarTexto('infoIESS',aporteEmpleado);
             valorPagar= calcularValorAPagar(sueldo, aporteEmpleado, descuento);
             mostrarTexto('infoPago',valorPagar);
+            habilitarComponente('btnGuardarRol');
         }else{
             mostrarTexto('lblErrorDescuentos','Ingresar descuento menor al sueldo');
         }
     }else{
         mostrarTexto('lblErrorDescuentos','Campo obligatorio*');
     }
-    
+}
+buscarRol= function(cedula){
+    let rolEncontrado= null;
+    let encontrarRol;
+    for(let i=0; i<roles.length;i++){
+        encontrarRol= roles[i];
+        if(encontrarRol.cedula == cedula){
+            rolEncontrado= encontrarRol;
+            break
+        }
+    }
+    return rolEncontrado;
+}
+agregarRol= function(rol){
+    let verificarRol= buscarRol(rol.cedula);
+    if(verificarRol == null){
+        roles.push(rol);
+        alert('SE AGREGO EXITOSAMENTE');
+        deshabilitarComponente('btnGuardarRol');
+    }else{
+        alert('YA EXISTE EL ROL');
+    }
+}
+calcularAporteEmpleador= function(sueldo){
+    let valorEmpleadorIESS=(sueldo*11.15)/100;
+    return valorEmpleadorIESS;
+}
+guardarRol= function(){
+    let cedulaR=recuperarTextoDiv('infoCedula');
+    let nombreR=recuperarTextoDiv('infoNombre');
+    let sueldoR=recuperarTextoDiv('infoSueldo');
+    let aporteIESSr=recuperarTextoDiv('infoIESS');
+    let valorPagarR=recuperarTextoDiv('infoPago');
+    let aporteEmpleadorC=calcularAporteEmpleador(sueldoR);
+    let rol={};
+    rol.cedula= cedulaR;
+    rol.nombre= nombreR;
+    rol.sueldo= sueldoR;
+    rol.valorAPagar=valorPagarR;
+    rol.aporteEmpleado=aporteIESSr;
+    rol.aporteEmpleador=aporteEmpleadorC;
+    agregarRol(rol);
 }
