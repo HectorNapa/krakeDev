@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="orden.css">
+    <script src="utilitarios.js"></script>
+    <script src="orden.js"></script>
+    <title>Orden</title> 
+</head>
+<body onload="mostrarTablaPersonas();">
+    <div class="contenedor">
+        <div class="titulo">ENCONTRAR EL MAYOR O MENOR</div>
+        <div class="contenido">
+            <div class="contenedorDatos">
+                <div class="contenedorIngreso">
+                    <div class="text">   Ingresar nombre :   </div>
+                    <div class="contCaja">
+                        <input type="text" class="caja" placeholder="Nombre" id="txtNombre"/>
+                        <div class="mensajeError" id="erroresNombre"></div>
+                    </div>
+                </div>
+                <div class="contenedorIngreso">
+                    <div class="text">Ingresar edad :</div>
+                    <div class="contCaja">
+                        <input type="text" class="caja" placeholder="Edad" id="txtEdad"/>
+                        <div class="mensajeError" id="erroresEdad"></div>
+                    </div>
+                </div>
+                <div class="contBoton">
+                    <input type="button" value="GUARDAR" class="boton" onclick="agregarPersona();"/>
+                    
+                </div>
+            </div>
+            <div class="contenedorTabla">
+                <div id="mostrarTabla" class="tabla"></div>
+                <div>
+                    <div id="mostrarMayorOMenor" class="Resultado"></div>
+                    <div>
+                        <input type="button" value="ENCONTRAR MAYOR" class="boton" onclick="determinarMayor();"/>
+                        <input type="button" value="ENCONTRAR MENOR" class="boton" onclick="determinarMenor();"/>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
