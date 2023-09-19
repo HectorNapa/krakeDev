@@ -62,6 +62,10 @@ body{
     justify-content: center;
     align-items: center;
     flex:1;
+    margin-left: 10px;
+}
+.btBoton{
+    margin: 10px;
 }
 .etiquetaTexto{
     display: flex;
